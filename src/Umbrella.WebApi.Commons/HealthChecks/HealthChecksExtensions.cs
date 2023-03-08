@@ -45,7 +45,8 @@ namespace Umbrella.WebApi.Commons.HealthChecks
         {
             if (config == null)
                 throw new ArgumentNullException(nameof(config));
-            return config.GetSection("HealthChecksUI:Enabled").ToString().ToLowerInvariant() == "true";
+            var flag = config.GetSection("HealthChecksUI:Enabled").Value ?? "";
+            return flag.ToLowerInvariant() == "true";
         }
     }
 }

@@ -1,6 +1,8 @@
 # Repository Content
 This library contains common helpers and componnet to implement WebApi in dotnet
 
+[![Build Status](https://garaproject.visualstudio.com/UmbrellaFramework/_apis/build/status/Umbrella.WebApi.Commons?branchName=main)](https://garaproject.visualstudio.com/UmbrellaFramework/_build/latest?definitionId=86&branchName=main)
+
 
 To install it, use proper command:
 
