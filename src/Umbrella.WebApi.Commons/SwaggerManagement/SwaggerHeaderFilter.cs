@@ -16,6 +16,8 @@ namespace Umbrella.WebApi.Commons.SwaggerManagement
     [ExcludeFromCodeCoverage]
     public class SwaggerHeaderFilter : IOperationFilter
     {
+        const string SCHEMA_TYPE_STRING = "string";
+
         /// <summary>
         /// <inheritdoc cref="IOperationFilter.Apply(OpenApiOperation, OperationFilterContext)"/>
         /// </summary>
@@ -66,16 +68,20 @@ namespace Umbrella.WebApi.Commons.SwaggerManagement
                         ReadOnly = true
                     };
                 }
+                else if (string.IsNullOrEmpty(attribute.DefaultValue))
+                {
+                    parameter.Schema = new OpenApiSchema
+                    {
+                        Type = SCHEMA_TYPE_STRING,
+                    };
+                }
                 else
                 {
-                    parameter.Schema = string.IsNullOrEmpty(attribute.DefaultValue)
-                        ? null
-                        : new OpenApiSchema
-                        {
-                            Type = "String",
-                            Default = new OpenApiString(attribute.DefaultValue),
-                            ReadOnly = true
-                        };
+                    parameter.Schema = new OpenApiSchema
+                    {
+                        Type = SCHEMA_TYPE_STRING,
+                        Default = new OpenApiString(attribute.DefaultValue)
+                    };
                 }
 
                 // add it to all requests
