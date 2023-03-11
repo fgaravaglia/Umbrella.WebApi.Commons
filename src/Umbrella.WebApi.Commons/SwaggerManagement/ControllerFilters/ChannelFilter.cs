@@ -6,7 +6,7 @@ using Umbrella.WebApi.Commons.SwaggerManagement;
 using Microsoft.AspNetCore.Http;
 using Umbrella.WebApi.Commons.Infrastructure.ErrorManagement;
 
-namespace Umbrella.Domain.WebApi.Infrastructure.SwaggerManagement.Filters
+namespace Umbrella.WebApi.Commons.SwaggerManagement.ControllerFilters
 {
     /// <summary>
     /// Filter to apply to each Request to validate mandatory headers

@@ -4,7 +4,7 @@ using System.Reflection;
 using Umbrella.WebApi.Commons.Infrastructure.ErrorManagement;
 using Umbrella.WebApi.Commons.SwaggerManagement;
 
-namespace Umbrella.Domain.WebApi.Infrastructure.SwaggerManagement.Filters
+namespace Umbrella.WebApi.Commons.SwaggerManagement.ControllerFilters
 {
     /// <summary>
     /// Filter to apply to each Request to validate mandatory headers
